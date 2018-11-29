@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 
 export type TimeBoxPropType = {
   selectedTime: number,
+  handleTime: (time: number) => void,
 };
 
 const times = [15, 30, 45, 60];

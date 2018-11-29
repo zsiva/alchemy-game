@@ -17,7 +17,7 @@ class App extends Component {
         <header>
           <h1>Make a soup!</h1>
         </header>
-        <IngredientsBox items={mockIngredients} />
+        <IngredientsBox ingredients={mockIngredients} />
         <footer>
           <small>
             <a href="https://www.freepik.com/free-vector/various-fresh-organic-vegetables-vector-pack_3428185.htm">

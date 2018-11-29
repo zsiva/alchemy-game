@@ -7,9 +7,9 @@ export type IngredientPropType = {
   name: string,
   img: string,
   color: string,
-  onDragStart: () => void,
-  onDragOver: () => void,
-  onDrop: () => void,
+  onDragStart: (ev: SyntheticDragEvent<*>) => void,
+  onDragOver: (ev: SyntheticDragEvent<*>) => void,
+  onDrop: (ev: SyntheticDragEvent<*>) => void,
 };
 
 export default function Ingredient(props: IngredientPropType) {
