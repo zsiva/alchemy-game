@@ -1,0 +1,52 @@
+.boxesGroup {
+  /* main layout to display nested boxes */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+  cursor: default;
+}
+
+.box {
+  height: 50px;
+  width: 75px;
+  border-radius: 10px;
+  cursor: move;
+}
+
+.pot {
+  background-color: black;
+  min-height: 100px;
+  width: 100px;
+}
+
+.ingredient {
+  height: 50px;
+  width: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.tomato {
+  background-image: url('./assets/tomato.png');
+}
+.carrot {
+  background-image: url('assets/carrot.png');
+}
+.pepper {
+  background-image: url('assets/pepper.png');
+}
+.broccoli {
+  background-image: url('assets/broccoli.png');
+}
+
+.saucepan {
+  background: url('assets/saucepan.jpg') no-repeat;
+  width: 200px;
+  height: 130px;
+  background-size: contain;
+  margin: 30px auto;
+}
+
+.actions {
+  margin-top: 30px;
+}
