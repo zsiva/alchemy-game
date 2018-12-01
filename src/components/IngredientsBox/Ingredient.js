@@ -5,7 +5,6 @@ import './styles.css';
 export type IngredientPropType = {
   id: string,
   name: string,
-  img: string,
   color: string,
   onDragStart: (ev: SyntheticDragEvent<*>) => void,
   onDragOver: (ev: SyntheticDragEvent<*>) => void,

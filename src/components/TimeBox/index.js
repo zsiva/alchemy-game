@@ -15,6 +15,7 @@ export default function TimeBox(props: TimeBoxPropType) {
       <div className="boxesGroup">
         {times.map(time => (
           <div
+            key={time}
             className={`button ${time === props.selectedTime ? 'button-active' : 'button-grey'}`}
             onClick={() => props.handleTime(time)}
           >

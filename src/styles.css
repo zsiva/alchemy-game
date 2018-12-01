@@ -1,11 +1,6 @@
 body {
   margin: 0;
 }
-.column {
-  width: 50%;
-  float: left;
-  margin-top: 20px;
-}
 
 h1 {
   text-align: center;
@@ -44,4 +39,42 @@ footer {
 .button-grey {
   background-color: #e7e7e7;
   color: black;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+}
+
+@keyframes swing {
+  15% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  30% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  50% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  65% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.swing {
+  animation: swing 1s ease;
+  animation-iteration-count: 2;
 }

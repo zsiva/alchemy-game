@@ -25,7 +25,6 @@ export default class IngredientsBox extends Component<
   };
 
   onDragStart = (ev: SyntheticDragEvent<*>, item: IngredientPropType) => {
-    console.log('dragstart:', item.color);
     ev.dataTransfer.setData('color', item.color);
     ev.dataTransfer.setData('name', item.name);
   };
@@ -42,18 +41,36 @@ export default class IngredientsBox extends Component<
     });
   };
 
+  startCooking = () => {
+    const saucepan = document.getElementById('saucepan');
+    if (saucepan) {
+      saucepan.classList.add('swing');
+    }
+  };
   render() {
     return (
       <div>
-        <div className="column">
-          <div className="saucepan" onDragOver={e => this.onDragOver(e)} onDrop={this.onDrop} />
-          <ul>
-            {this.state.selectedIngredients.map(ingre => (
-              <li style={{ color: ingre.color }}>{ingre.name}</li>
-            ))}
-          </ul>
+        <div className="panColumn">
+          <div
+            id="saucepan"
+            className="saucepan"
+            onDragOver={e => this.onDragOver(e)}
+            onDrop={this.onDrop}
+          />
+          {this.state.selectedIngredients.length > 0 && (
+            <div className="ingredientsList">
+              <h4>Selected ingredients</h4>
+              <ul>
+                {this.state.selectedIngredients.map(ingre => (
+                  <li key={ingre.name} style={{ color: ingre.color }}>
+                    {ingre.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-        <div className="column">
+        <div className="ingredientsColumn">
           <h3>
             Choose the ingredients
             <small> (Drop them in the saucepan)</small>
@@ -72,7 +89,13 @@ export default class IngredientsBox extends Component<
           </div>
           <TimeBox handleTime={this.onTimeSelect} selectedTime={this.state.selectedTime} />
           <div className="actions">
-            <button className="button button-blue">Start cooking</button>
+            <button
+              disabled={this.state.selectedTime === 0}
+              className="button button-blue"
+              onClick={this.startCooking}
+            >
+              Start cooking
+            </button>
           </div>
         </div>
       </div>

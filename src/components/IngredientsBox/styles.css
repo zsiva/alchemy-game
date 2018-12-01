@@ -1,7 +1,7 @@
 .boxesGroup {
-  /* main layout to display nested boxes */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   place-items: center;
   cursor: default;
 }
@@ -26,6 +26,19 @@
   background-repeat: no-repeat;
 }
 
+.ingredientsList {
+  margin: 20px;
+  background: #040404;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 230px;
+}
+
+.ingredientsList h4 {
+  color: white;
+  margin: 0;
+}
+
 .tomato {
   background-image: url('./assets/tomato.png');
 }
@@ -38,6 +51,12 @@
 .broccoli {
   background-image: url('assets/broccoli.png');
 }
+.parsnip {
+  background-image: url('assets/parsnip.png');
+}
+.chili {
+  background-image: url('assets/chili.png');
+}
 
 .saucepan {
   background: url('assets/saucepan.jpg') no-repeat;
@@ -49,4 +68,15 @@
 
 .actions {
   margin-top: 30px;
+}
+
+.panColumn {
+  width: 40%;
+  float: left;
+  margin-top: 20px;
+}
+.ingredientsColumn {
+  width: 60%;
+  float: left;
+  margin-top: 20px;
 }
